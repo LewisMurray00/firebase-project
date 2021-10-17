@@ -1,5 +1,7 @@
+/* eslint-disable default-case */
 import './App.css';
 import { useState, useEffect } from 'react';
+import fire from './fire';
 
 function App() {
 
@@ -13,7 +15,24 @@ function App() {
 
   const [hasAccount, setHasAccount] = useState(false);
 
-  
+  const handleLogin = () => {
+    fire
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .catch(err =>{
+        switch(err.code){
+          case "auth/invalid-email":
+          case "auth/user-disabled":
+          case "auth/user-not-found":
+            setEmailError(err.message);
+            break;
+          case "auth/wrong-password":
+            setPasswordError(err.message);
+            break;
+        }
+      })
+  }
+
 
   return (
     <div className="App">
