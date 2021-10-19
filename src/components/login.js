@@ -17,7 +17,17 @@ const Login = (props) => {
 
     return (
         <section className="login">
-            
+            <div className="login-container">
+                <label>Username</label>
+                <input 
+                    type="text" 
+                    autofocus 
+                    required 
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)}  
+                />
+                <p className="error-message">{emailError}</p>
+            </div>
         </section>
     )
 }
