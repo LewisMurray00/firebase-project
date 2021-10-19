@@ -36,6 +36,26 @@ const Login = (props) => {
                     onChange={(e)=> setPassword(e.target.value)}
                 />
                 <p className="error-message">{passwordError}</p>
+
+                <div className="button-container">
+                    {hasAccount ? (
+                        <>
+                            <button onClick={handleLogin}>Sign in</button>
+                            <p>
+                                Don't have an account ? 
+                                <span onClick={()=> setHasAccount(!hasAccount)}>Sign up</span>
+                            </p>
+                        </>
+                    ) : (
+                        <>
+                            <button onClick={handleSignup}>Sign up</button>
+                            <p>
+                                Have an account ? 
+                                <span onClick={()=>setHasAccount(!hasAccount)}>Sign in</span>
+                            </p>
+                        </>
+                    )}
+                </div>
             </div>
         </section>
     )
