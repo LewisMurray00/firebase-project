@@ -114,3 +114,13 @@ button{
     align-items: center;
     justify-content: space-between;
 }
+
+.hero nav h2 {
+    color: #fff;
+}
+
+.hero nav button{
+    width: 86px;
+    padding: 8px 0;
+    background: #3a2b58;
+}
