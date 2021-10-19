@@ -27,6 +27,15 @@ const Login = (props) => {
                     onChange={(e) => setEmail(e.target.value)}  
                 />
                 <p className="error-message">{emailError}</p>
+
+                <label>Password</label>
+                <input
+                    type="password"
+                    required
+                    value={password}
+                    onChange={(e)=> setPassword(e.target.value)}
+                />
+                <p className="error-message">{passwordError}</p>
             </div>
         </section>
     )
