@@ -45,6 +45,14 @@ button{
       box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
 }
 
+.login .login-container label{
+    color: white;
+    margin: 14px 0;
+    display: block;
+    font-size: 22px;
+    line-height: 1;
+}
+
 .login .login-container input{
     width: 100%;
     border: none;
@@ -55,3 +63,4 @@ button{
     color: #fff;
     letter-spacing: 1px;
 }
+
