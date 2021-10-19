@@ -2,6 +2,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import Login from './components/login';
+import Hero from './components/hero';
 import fire from './fire';
 
 function App() {
@@ -96,6 +97,9 @@ function App() {
       setHasAccount={setHasAccount}
       emailError={emailError}
       passwordError={passwordError}
+      />
+      <Hero
+       handleLogout={handleLogout}
       />
     </div>
   );
