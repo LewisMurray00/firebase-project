@@ -1,6 +1,7 @@
 /* eslint-disable default-case */
 import './App.css';
 import { useState, useEffect } from 'react';
+import Login from './components/login';
 import fire from './fire';
 
 function App() {
@@ -84,7 +85,18 @@ function App() {
 
   return (
     <div className="App">
-      
+      <Login 
+      email={email}
+      setEmail={setEmail}
+      password={password}
+      setPassword={setPassword}
+      handleLogin={handleLogin}
+      handleSignup={handleSignup}
+      hasAccount={hasAccount}
+      setHasAccount={setHasAccount}
+      emailError={emailError}
+      passwordError={passwordError}
+      />
     </div>
   );
 }
