@@ -105,3 +105,12 @@ button{
         rgba(17, 27, 75, 0.9) 100%
     );
 }
+
+.hero nav{
+    background: #603bbb;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
