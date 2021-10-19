@@ -15,7 +15,18 @@ function App() {
 
   const [hasAccount, setHasAccount] = useState(false);
 
+  const clearInputs = () => {
+    setEmail('')
+    setPassword('')
+  }
+
+  const clearErrors = () => {
+    setEmailError('')
+    setPasswordError('')
+  }
+
   const handleLogin = () => {
+    clearErrors()
     fire
       .auth()
       .signInWithEmailAndPassword(email, password)
@@ -34,6 +45,7 @@ function App() {
   };
 
   const handleSignup = () => {
+    clearErrors()
     fire
     .auth()
     .createUserWithEmailAndPassword(email, password)
@@ -57,6 +69,7 @@ function App() {
   const authListener = () => {
     fire.auth().onAuthStateChanged(user =>{
       if(user){
+        clearInputs()
         setUser(user);
       } else {
         setUser('');
@@ -67,6 +80,8 @@ function App() {
   useEffect(()=>{
     authListener();
   }, [])
+
+
   return (
     <div className="App">
       
