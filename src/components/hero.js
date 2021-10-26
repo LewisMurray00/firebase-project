@@ -1,5 +1,7 @@
 import React from 'react'
 import GalleryTitle from './galleryTitle'
+import UploadForm from './UploadForm'
+
 
 const Hero = ({ handleLogout }) => {
     return (
@@ -9,6 +11,7 @@ const Hero = ({ handleLogout }) => {
                 <button onClick={handleLogout}>Log out</button>
             </nav>
             <GalleryTitle />
+            <UploadForm />
         </section>
     )
 }
