@@ -148,3 +148,43 @@ button:hover{
     margin-top: 60px;
     font-size: 2.6rem;
 }
+
+/* Upload form styling*/
+
+.upload-form{
+    margin: 30px auto 10px;
+    text-align: center;
+}
+
+label input {
+    height: 0;
+    width: 0;
+    opacity: 0;
+}
+
+.upload-label {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgb(2, 2, 141);
+    border-radius: 50%;
+    margin: 10px auto;
+    line-height: 30px;
+    color: rgb(2, 2, 141);
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.upload-label:hover{
+    background: rgb(2, 2, 141);
+    color: white;
+}
+
+.output{
+    height: 60px;
+    font-size: 0.8rem;
+}
+
+.error{
+    color: #ff4a4a;
+}
