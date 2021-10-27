@@ -188,3 +188,10 @@ label input {
 .error{
     color: #ff4a4a;
 }
+
+/* progress bar styling */
+.progress-bar{
+    height: 5px;
+    background: rgb(2, 2, 141);
+    margin-top: 20px;
+}
