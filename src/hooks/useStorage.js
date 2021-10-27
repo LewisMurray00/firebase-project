@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { projectStorage } from "../fire";
+import { projectStorage, projectFirestore, timestamp } from "../fire";
 
 //creating a new hook for handling the fire uploads
 
@@ -12,6 +12,7 @@ const useStorage =(file)=>{
     useEffect(()=>{
         //references to a file inside the firebase storage
         const storageRef = projectStorage.ref(file.name);
+        const collectionRef = projectFirestore.collection('images');
 
         storageRef.put(file).on('state_changed', (snap)=>{
             //creates a snapshot in time of the upload
@@ -25,9 +26,12 @@ const useStorage =(file)=>{
         }, async()=>{
             //Check to see if the file has been successfully uploaded
             const url = await storageRef.getDownloadURL();
+            //Adding url and createdAt to the firebase collection known as 'images
+            const createdAt = timestamp();
+            collectionRef.add({url, createdAt})
             setUrl(url);
         })
-    }, [file])
+    }, [file]);
 
     return {progress, url, error }
 }
