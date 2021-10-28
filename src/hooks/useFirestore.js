@@ -6,7 +6,7 @@ const useFirestore = (collection) =>{
 
     //creating a useEffect hook that will rerun everytime the collection changes
     useEffect(()=>{
-        projectFirestore.collection(collection)
+        const unsub = projectFirestore.collection(collection)
         .orderBy('createdAt', 'desc')
             .onSnapshot((snap)=>{
                 //takes a snapshot of that moment in time of the database
@@ -18,7 +18,12 @@ const useFirestore = (collection) =>{
                 })
                 setDocs(documents);
             })
+            
+        //unsubscribes from the collection when we no longer use it (clean up function)
+        return ()=>unsub();
     }, [collection])
 
     return {docs};
 }
+
+export default useFirestore;
