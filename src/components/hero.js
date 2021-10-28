@@ -2,6 +2,7 @@ import React from 'react'
 import GalleryTitle from './galleryTitle'
 import UploadForm from './UploadForm'
 import ImageGrid from './imageGrid'
+import Modal from './modal'
 
 const Hero = ({ handleLogout }) => {
     return (
@@ -13,6 +14,7 @@ const Hero = ({ handleLogout }) => {
             <GalleryTitle />
             <UploadForm />
             <ImageGrid />
+            <Modal />
         </section>
     )
 }
