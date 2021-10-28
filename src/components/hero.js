@@ -18,7 +18,7 @@ const Hero = ({ handleLogout }) => {
             <GalleryTitle />
             <UploadForm />
             <ImageGrid setSelectedImg={setSelectedImg} />
-            <Modal selectedImg={selectedImg}/>
+            {selectedImg && <Modal selectedImg={selectedImg}/>}
         </section>
     )
 }
