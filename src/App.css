@@ -138,6 +138,7 @@ button:hover{
 /* Gallery showcase styling*/
 .gallery-title h1 {
     color: black;
+    background: lightgray;
     padding-top: 10px;
     font-size: 1.5rem;
     font-weight: normal;
